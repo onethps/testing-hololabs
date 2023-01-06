@@ -1,13 +1,13 @@
 import React from 'react';
 
-function App() {
+import { Hero } from './sections/Hero/Hero';
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <div>hhehehe</div>
-      </header>
+      <Hero />
     </div>
   );
-}
+};
 
 export default App;
