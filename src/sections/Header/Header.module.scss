@@ -1,0 +1,40 @@
+@import "../../styles/variables.scss";
+@import "../../styles/media.scss";
+
+.header {
+    background-color: $bgSectionPrimary;
+
+    & .wrapper {
+        height: 80px;
+        border-bottom: 5px solid black;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        margin-left: 80px;
+        margin-right: 80px;
+
+        .logo {
+        }
+
+        .navigation {
+            display: none;
+            @include media(laptop) {
+                display: flex;
+            }
+        }
+
+        & .burgerIcon {
+            display: block;
+            @include media(laptop) {
+                display: none;
+            }
+        }
+
+        & button {
+            display: none;
+            @include media(laptop) {
+                display: block;
+            }
+        }
+    }
+}

@@ -1,12 +1,16 @@
 import React from 'react';
 
+import { Header } from './sections/Header/Header';
 import { Hero } from './sections/Hero/Hero';
+import { Team } from './sections/Team/Team';
 
 const App = () => {
   return (
-    <div className="App">
+    <main>
+      <Header />
       <Hero />
-    </div>
+      <Team />
+    </main>
   );
 };
 

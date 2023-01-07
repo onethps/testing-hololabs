@@ -9,11 +9,13 @@ export const Button: React.FC<ButtonProps> = ({
   className,
   ...props
 }) => {
+  const buttonCustomStyle = variant === 'primary' ? styles.primary : styles.secondary;
+
   return (
     <button
       type="button"
       {...props}
-      className={`${variant === 'primary' ? styles.primary : styles.secondary}`}
+      className={`${styles.buttonBase} ${buttonCustomStyle} ${className}`}
     >
       {children}
     </button>

@@ -1,18 +1,47 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
+@import "../../styles/media.scss";
 
 .root {
-    background-color: $bgColorMain;
-    height: 100vh;
+    background-color: $bgSectionPrimary;
+    height: 100%;
 
+    & .container {
+        @include container();
 
-    & .header {
-        height: 80px;
-        border-bottom: 5px solid black;
-        justify-content: space-between;
-        display: flex;
-        align-items: center;
-       margin-left: 80px;
-       margin-right: 80px;
-   
+        & .wrapper {
+            display: flex;
+            flex-direction: column;
+            padding-top: 32px;
+            padding-bottom: 96px;
+            align-items: center;
+
+            @include media(laptop) {
+                flex-direction: row;
+                gap: 100px;
+            }
+
+            & .leftItem {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                gap: 60px;
+
+                & .heroTitle {
+                    height: auto;
+                    width: 100%;
+                }
+
+                & .heroDescription {
+                    max-width: 448px;
+                    line-height: 32px;
+                }
+            }
+
+            & .rightItem {
+                flex: 1;
+                position: relative;
+                min-height: 565px;
+            }
+        }
     }
 }

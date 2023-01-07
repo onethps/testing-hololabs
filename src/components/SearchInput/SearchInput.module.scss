@@ -1,0 +1,24 @@
+.root {
+    display: flex;
+    padding: 8px;
+    background-color: white;
+    justify-content: space-between;
+    box-shadow: 0px 30px 40px rgba(240, 101, 126, 0.05);
+    border-radius: 40px;
+    gap: 13px;
+    max-width: 448px;
+
+    & img {
+        margin-left: 21px;
+    }
+
+    & input {
+        flex: 2;
+        border: none;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

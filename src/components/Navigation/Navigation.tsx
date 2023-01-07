@@ -1,6 +1,7 @@
 import React from 'react';
 
-// import styles from './Navigation.module.scss';
+import styles from './Navigation.module.scss';
+import { NavigationProps } from './Navigation.Props';
 
 const links = [
   {
@@ -29,9 +30,9 @@ const links = [
   },
 ];
 
-export const Navigation = () => {
+export const Navigation: React.FC<NavigationProps> = ({ className, ...props }) => {
   return (
-    <nav>
+    <nav {...props} className={`${styles.root} ${className}`}>
       {links.map(link => (
         <a href={link.href} key={link.id}>
           {link.title}

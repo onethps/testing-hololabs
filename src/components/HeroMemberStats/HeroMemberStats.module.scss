@@ -1,0 +1,33 @@
+@import "../../styles/variables.scss";
+@import "../../styles/media.scss";
+
+.root {
+    position: absolute;
+    left: -40px;
+
+    @include media(laptop) {
+        left: 80px;
+    }
+
+    & .parrotImage {
+        // width: 565px;
+        // position: absolute;
+    }
+
+    @include media(laptop) {
+        width: 100%;
+        position: relative;
+    }
+
+    & .cardImage {
+        position: absolute;
+        width: 216px;
+        bottom: 0;
+        right: 350px;
+
+        @include media(laptop) {
+            width: 272px;
+            right: 250px;
+        }
+    }
+}

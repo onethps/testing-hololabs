@@ -1,10 +1,11 @@
 import React from 'react';
 
 import styles from './Logo.module.scss';
+import { LogoProps } from './Logo.Props';
 
-export const Logo = () => {
+export const Logo: React.FC<LogoProps> = ({ className, ...props }) => {
   return (
-    <div className={styles.root}>
+    <div {...props} className={`${styles.root} ${className}`}>
       <img width={38} height={38} alt="logo" src="./logo.svg" />
       <h1>Rootz</h1>
     </div>
