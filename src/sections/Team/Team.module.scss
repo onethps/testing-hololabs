@@ -24,36 +24,65 @@
             }
         }
 
-        & .userImages {
-            display: flex;
-            min-height: 367px;
-            justify-content: space-between;
-            flex-direction: column;
+        & .photosBlock {
+            position: relative;
 
-            @include media(laptop) {
-                flex-direction: row;
-            }
-
-            & img:first-child {
-                align-self: flex-start;
-                max-height: 273px;
-                max-width: 323px;
+            & .line1 {
+                position: absolute;
+                top: -180px;
+                left: 150px;
                 width: 100%;
             }
 
-            & img:last-child {
-                width: 100%;
-                align-self: flex-start;
-                max-width: 276px;
-                max-height: 312px;
-            }
-
-            & img {
+            & .userImages {
                 display: flex;
-                align-self: flex-end;
-                max-height: 263px;
-                max-width: 334px;
-                width: 100%;
+                min-height: 367px;
+                justify-content: space-between;
+                flex-direction: column;
+
+                @include media(laptop) {
+                    flex-direction: row;
+                }
+
+                & .user:first-child {
+                    align-self: flex-start;
+
+                    max-height: 170px;
+                    max-width: 200px;
+
+                    @include media(mobile) {
+                        max-height: 273px;
+                        max-width: 323px;
+                    }
+
+                    width: 100%;
+                }
+
+                & .user {
+                    display: flex;
+                    align-self: flex-end;
+                    max-height: 208px;
+                    max-width: 163px;
+
+                    @include media(mobile) {
+                        max-height: 273px;
+                        max-width: 323px;
+                    }
+
+                    width: 100%;
+                }
+
+                & .user:last-child {
+                    width: 100%;
+                    align-self: flex-start;
+                    max-width: 171px;
+                    max-height: 193px;
+
+                    @include media(mobile) {
+                        max-width: 276px;
+                        max-height: 312px;
+                    }
+                }
             }
         }
     }
