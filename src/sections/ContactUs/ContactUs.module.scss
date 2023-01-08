@@ -1,0 +1,103 @@
+@import "../../styles/variables.scss";
+@import "../../styles/media.scss";
+
+.root {
+    margin: 100px 0;
+    padding: 0 18px;
+
+    & .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & .title {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        & .description {
+            margin-top: 20px;
+            font-size: 15px;
+            line-height: 175%;
+        }
+
+        & .contactButton {
+            align-self: flex-start;
+            margin-top: 32px;
+            text-transform: uppercase;
+        }
+
+        & .faqBox {
+            margin-top: 48px;
+
+            & .faqItem {
+                border-bottom: 1px solid rgba(30, 26, 32, 0.2);
+                -webkit-background-clip: padding-box; /* for Safari */
+                background-clip: padding-box;
+                padding: 24px 0;
+
+                &:last-child {
+                    // opacity: 0.2;
+                    border-bottom: 1px solid rgba(30, 26, 32, 0.2);
+                    -webkit-background-clip: padding-box; /* for Safari */
+                    background-clip: padding-box;
+                }
+
+                //header collapse
+                & button {
+                    width: 100%;
+                    border: none;
+                    background: none;
+                    //text collapse header
+                    & span {
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 24px;
+                        font-family: "Poppins";
+                        font-style: normal;
+                    }
+
+                    & .headerButton {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        & .buttonWrapper {
+                            background: $bgButtonPrimary;
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            position: relative;
+
+                            & .plus {
+                                transition: 0.5s all;
+                                transition-property: transform;
+                                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                                transition-duration: 150ms;
+                            }
+
+                            & .minus {
+                                transform: rotate(180deg);
+                                transition: 0.5s all;
+                                transition-property: transform;
+                                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                                transition-duration: 150ms;
+                            }
+                        }
+                    }
+                }
+
+                // collapse content
+                & .collapseText {
+                    font-weight: 400;
+                    font-size: 15px;
+                    line-height: 25px;
+                    padding: 16px 0;
+                }
+            }
+        }
+    }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { ContactUs } from './sections/ContactUs/ContactUs';
 import { Header } from './sections/Header/Header';
 import { Hero } from './sections/Hero/Hero';
 import { LogIn } from './sections/LogIn/LogIn';
@@ -12,6 +13,7 @@ const App = () => {
       <Hero />
       <Team />
       <LogIn />
+      <ContactUs />
     </main>
   );
 };

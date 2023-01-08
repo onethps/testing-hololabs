@@ -1,0 +1,9 @@
+@import "../../styles/variables.scss";
+@import "../../styles/media.scss";
+
+.root {
+    overflow: hidden;
+    transition-property: max-height;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
