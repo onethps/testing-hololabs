@@ -11,6 +11,8 @@ body {
   font-family: "Poppins", sans-serif;
   color: #1e1a20;
   font-size: 16px;
+  height: 100%;
+  overflow: auto;
 }
 
 @import "swiper/css";
