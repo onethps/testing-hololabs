@@ -1,0 +1,42 @@
+@import "../../styles/media.scss";
+
+.root {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    & .swiper {
+        max-width: 400px;
+        height: 100%;
+
+        @include media(laptop) {
+            max-width: 100%;
+        }
+    }
+
+    // control slider
+    & .sliderControl {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+
+        & .rightArrow {
+            cursor: pointer;
+            border-right: 2px solid;
+            border-bottom: 2px solid;
+            height: 15px;
+            width: 15px;
+            transform: rotate(-45deg);
+        }
+
+        & .leftArrow {
+            cursor: pointer;
+            border-right: 2px solid;
+            border-bottom: 2px solid;
+            height: 15px;
+            width: 15px;
+            transform: rotate(-220deg);
+        }
+    }
+}

@@ -13,6 +13,7 @@ body {
   font-size: 16px;
   height: 100%;
   overflow: auto;
+  overflow-x: hidden;
 }
 
 @import "swiper/css";
