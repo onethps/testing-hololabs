@@ -4,6 +4,8 @@ import React from 'react';
 import { Navigation, Pagination, Keyboard } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { useSwiperRef } from '../../hooks/useSwiperRef';
+
 // import ReactBG from '../../assets/slider_bg1.svg';
 
 import styles from './Slider.module.scss';
@@ -11,6 +13,9 @@ import styles from './Slider.module.scss';
 // Import Swiper styles
 
 export const Slider = () => {
+  const [previousSlideElement, previousSlideRef] = useSwiperRef<HTMLButtonElement>();
+  const [nextSlideElement, nextSlideRef] = useSwiperRef<HTMLButtonElement>();
+
   const sliderContent = [
     {
       id: 1,
@@ -62,20 +67,22 @@ export const Slider = () => {
         className={styles.swiper}
         initialSlide={3}
         loop
-        slidesPerView={3}
         spaceBetween={0}
+        slidesPerView="auto"
         centeredSlides
-        keyboard={{
-          enabled: true,
+        navigation={{
+          prevEl: previousSlideElement,
+          nextEl: nextSlideElement,
         }}
         pagination={{
-          clickable: true,
+          el: '.swiper-custom-pagination',
+          type: 'fraction',
         }}
-        navigation
         modules={[Keyboard, Pagination, Navigation]}
+        breakpoints={{}}
       >
         {sliderContent.map(slide => {
-          const getRandom = Math.floor(Math.random() * randomCardStyle.length);
+          const getRandomCardStyle = Math.floor(Math.random() * randomCardStyle.length);
 
           return (
             <SwiperSlide key={slide.id} className={styles.slide}>
@@ -83,7 +90,7 @@ export const Slider = () => {
                 <div className={`${styles.activeSlide} ${isActive ? styles.zoom : ''}`}>
                   <img
                     style={{
-                      borderRadius: randomCardStyle[getRandom].borderRadius,
+                      borderRadius: randomCardStyle[getRandomCardStyle].borderRadius,
                     }}
                     alt="label-img"
                     className={`${styles.labelImg} ${
@@ -103,6 +110,14 @@ export const Slider = () => {
           );
         })}
       </Swiper>
+      <div className={styles.sliderControl}>
+        <span ref={previousSlideRef} className={styles.leftArrow} />
+
+        <div className={styles.pagination}>
+          <div className="swiper-custom-pagination" />
+        </div>
+        <span ref={nextSlideRef} className={styles.rightArrow} />
+      </div>
     </div>
   );
 };

@@ -5,16 +5,24 @@
     min-width: 100vw;
     margin-bottom: 100px;
     background: #ffbd9e;
-    width: 1440px;
     height: 655px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
 
     & .swiper {
-        width: 55%;
-        height: 100%;
+        width: 100%;
+        height: 400px;
 
         & .slide {
             display: flex;
             align-items: center;
+            max-width: 438px;
+            transform: scale(0.8);
+            justify-content: center;
 
             & .zoom {
                 transform: scale(1.2);
@@ -23,14 +31,13 @@
 
             & .activeSlide {
                 position: relative;
-                width: 438px;
-                height: 362px;
+                max-width: 438px;
+                height: auto;
 
                 & .labelImg {
-                    position: absolute;
-                    top: 0;
-                    width: 438px;
-                    height: 362px;
+                    width: 277px;
+                    height: 243px;
+                    filter: brightness(85%);
                     -webkit-filter: brightness(85%);
                 }
 
@@ -38,23 +45,61 @@
                     background-color: #f7f3f4;
                     box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 0.3);
                     border-radius: 13% 87% 37% 63% / 57% 38% 62% 43% !important;
-                    width: 438px;
-                    height: 362px;
+                    width: 380px;
+                    height: 283px;
                     display: flex;
                     flex-direction: column;
+                    gap: 8px;
                     justify-content: center;
                     align-items: center;
                     padding: 40px;
+
+                    @include media(laptop) {
+                        width: 438px;
+                        height: 383px;
+                    }
+
+                    & span {
+                        font-size: 24px;
+                        opacity: 0.9;
+                        font-weight: 600;
+                    }
                 }
 
                 & .defaultImage {
                 }
 
                 & .animateImageActiveLabel {
+                    position: absolute;
+                    top: 0;
                     -webkit-animation: slide-bck-tl 0.45s cubic-bezier(0.47, 0, 0.745, 0.715) both;
                     animation: slide-bck-tl 0.45s cubic-bezier(0.47, 0, 0.745, 0.715) both;
                 }
             }
+        }
+    }
+    // control slider
+    & .sliderControl {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+
+        & .rightArrow {
+            cursor: pointer;
+            border-right: 2px solid;
+            border-bottom: 2px solid;
+            height: 15px;
+            width: 15px;
+            transform: rotate(-45deg);
+        }
+
+        & .leftArrow {
+            cursor: pointer;
+            border-right: 2px solid;
+            border-bottom: 2px solid;
+            height: 15px;
+            width: 15px;
+            transform: rotate(-220deg);
         }
     }
 }
