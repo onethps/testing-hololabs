@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { ReactComponent as BurgerIcon } from '../../assets/burger.svg';
+import Hamburger from 'hamburger-react';
+
 import { Button } from '../../components/Button/Button';
 import { Logo } from '../../components/Logo/Logo';
 // import { Navigation } from '../../components/Navigation/Navigation';
@@ -60,7 +61,14 @@ export const Header = () => {
           ))}
           <Button variant="secondary">Apply</Button>
         </nav>
-        <BurgerIcon className={styles.burgerIcon} onClick={() => setOpen(!open)} />
+        {/* <BurgerIcon /> */}
+        <button
+          type="button"
+          className={styles.burgerIcon}
+          onClick={() => setOpen(!open)}
+        >
+          <Hamburger />
+        </button>
 
         <Button className={styles.navButton} variant="secondary">
           Apply

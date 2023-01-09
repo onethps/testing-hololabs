@@ -28,6 +28,7 @@
             right: 0;
             bottom: 0;
             height: 100vh;
+            z-index: 99;
             width: 100vw;
             background-color: $bgSectionPrimary;
             padding-top: 10%;
@@ -63,6 +64,8 @@
         }
 
         & .burgerIcon {
+            border: none;
+            background: none;
             display: block;
             z-index: 2;
 
