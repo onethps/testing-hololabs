@@ -36,14 +36,16 @@ export const ContactUs = () => {
   return (
     <section className={styles.root}>
       <div className={styles.wrapper}>
-        <h3 className={styles.title}>Ready to Get started?</h3>
-        <p className={styles.description}>
-          When pattern is mentioned in interior design, it is easy to asso- ciate it with
-          a geometric patterned wallpaper or colourful prints on interior fabrics.
-        </p>
-        <Button variant="primary" className={styles.contactButton}>
-          Contact us
-        </Button>
+        <div className={styles.leftItem}>
+          <h3 className={styles.title}>Ready to Get started?</h3>
+          <p className={styles.description}>
+            When pattern is mentioned in interior design, it is easy to asso- ciate it
+            with a geometric patterned wallpaper or colourful prints on interior fabrics.
+          </p>
+          <Button variant="primary" className={styles.contactButton}>
+            Contact us
+          </Button>
+        </div>
 
         <div className={styles.faqBox}>
           {faqText.map(({ title, id, text }) => {

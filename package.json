@@ -14,7 +14,9 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "typescript": "*",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "swiper": "^8.4.5",
+    "@types/swiper": "^6.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,6 +45,7 @@
     ]
   },
   "devDependencies": {
+   
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.48.0",
     "eslint": "^8.0.1",
@@ -59,5 +62,6 @@
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "prettier": "^2.8.1",
     "sass": "^1.57.1"
+    
   }
 }

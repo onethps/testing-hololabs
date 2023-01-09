@@ -2,42 +2,57 @@
 @import "../../styles/media.scss";
 
 .root {
-    margin: 100px 0;
-    padding: 0 18px;
+    @include container();
 
     & .wrapper {
+        margin: 100px 0;
+        padding: 0 18px;
         display: flex;
         flex-direction: column;
-        align-items: center;
 
-        & .title {
-            font-size: 28px;
-            font-weight: 700;
+        @include media(laptop) {
+            flex-direction: row;
+            gap: 104px;
+            margin: 192px 0;
         }
 
-        & .description {
-            margin-top: 20px;
-            font-size: 15px;
-            line-height: 175%;
-        }
+        & .leftItem {
+            & .title {
+                font-size: 26px;
+                font-weight: 700;
 
-        & .contactButton {
-            align-self: flex-start;
-            margin-top: 32px;
-            text-transform: uppercase;
+                @include media(laptop) {
+                    font-size: 38px;
+                }
+            }
+
+            & .description {
+                margin-top: 20px;
+                font-size: 15px;
+                line-height: 175%;
+            }
+
+            & .contactButton {
+                align-self: flex-start;
+                margin-top: 32px;
+                text-transform: uppercase;
+            }
         }
 
         & .faqBox {
-            margin-top: 48px;
-
             & .faqItem {
                 border-bottom: 1px solid rgba(30, 26, 32, 0.2);
                 -webkit-background-clip: padding-box; /* for Safari */
                 background-clip: padding-box;
                 padding: 24px 0;
 
+                &:first-child {
+                    @include media(laptop) {
+                        padding-top: 0;
+                    }
+                }
+
                 &:last-child {
-                    // opacity: 0.2;
                     border-bottom: 1px solid rgba(30, 26, 32, 0.2);
                     -webkit-background-clip: padding-box; /* for Safari */
                     background-clip: padding-box;
@@ -48,6 +63,8 @@
                     width: 100%;
                     border: none;
                     background: none;
+                    text-align: left;
+
                     //text collapse header
                     & span {
                         font-weight: 600;
@@ -62,7 +79,15 @@
                         justify-content: space-between;
                         align-items: center;
 
+                        & span {
+                            max-width: 80%;
+                            @include media(laptop) {
+                                max-width: inherit;
+                            }
+                        }
+
                         & .buttonWrapper {
+                            min-width: 40px;
                             background: $bgButtonPrimary;
                             width: 40px;
                             height: 40px;
@@ -70,7 +95,6 @@
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            position: relative;
 
                             & .plus {
                                 transition: 0.5s all;
