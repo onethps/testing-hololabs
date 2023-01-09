@@ -7,7 +7,7 @@
     & .wrapper {
         margin: 192px 0;
 
-        & .header {
+        & .headerBox {
             max-width: 352px;
             margin: 0 auto;
 
@@ -24,64 +24,50 @@
             }
         }
 
-        & .photosBlock {
-            position: relative;
+        & .usersBox {
+            display: flex;
+            min-height: 367px;
+            max-width: 800px;
+            width: 100%;
+            margin: 10px auto;
+            justify-content: space-between;
+            flex-direction: column;
 
-            & .line1 {
-                position: absolute;
-                top: -180px;
-                left: 150px;
-                width: 100%;
+            @include media(laptop) {
+                flex-direction: row;
+                max-width: inherit;
             }
 
-            & .userImages {
-                display: flex;
-                min-height: 367px;
-                justify-content: space-between;
-                flex-direction: column;
+            & .user:first-child {
+                align-self: flex-start;
+                height: auto;
+                max-width: 100px;
 
-                @include media(laptop) {
-                    flex-direction: row;
+                @include media(mobile) {
+                    max-height: 273px;
+                    max-width: 323px;
                 }
+            }
 
-                & .user:first-child {
-                    align-self: flex-start;
+            & .user {
+                align-self: flex-end;
+                height: auto;
+                max-width: 163px;
 
-                    max-height: 170px;
-                    max-width: 200px;
-
-                    @include media(mobile) {
-                        max-height: 273px;
-                        max-width: 323px;
-                    }
-
-                    width: 100%;
+                @include media(mobile) {
+                    max-height: 273px;
+                    max-width: 323px;
                 }
+            }
 
-                & .user {
-                    display: flex;
-                    align-self: flex-end;
-                    max-height: 208px;
-                    max-width: 163px;
+            & .user:last-child {
+                align-self: flex-start;
+                max-width: 171px;
+                height: auto;
 
-                    @include media(mobile) {
-                        max-height: 273px;
-                        max-width: 323px;
-                    }
-
-                    width: 100%;
-                }
-
-                & .user:last-child {
-                    width: 100%;
-                    align-self: flex-start;
-                    max-width: 171px;
-                    max-height: 193px;
-
-                    @include media(mobile) {
-                        max-width: 276px;
-                        max-height: 312px;
-                    }
+                @include media(mobile) {
+                    max-width: 276px;
+                    max-height: 312px;
                 }
             }
         }
