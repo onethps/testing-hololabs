@@ -6,7 +6,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 89px 30px;
+  padding: 0 15px;
+  margin-top: 43px;
+
+  @include media(laptop) {
+    padding: 89px 30px;
+    margin-top: 0;
+  }
 
   & .header {
     &:first-child {
