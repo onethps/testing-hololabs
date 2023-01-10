@@ -12,12 +12,12 @@
             display: flex;
             flex-direction: column;
             padding-top: 32px;
-            padding-bottom: 96px;
             align-items: center;
 
             @include media(laptop) {
                 flex-direction: row;
                 gap: 100px;
+                padding-bottom: 96px;
             }
 
             & .leftItem {

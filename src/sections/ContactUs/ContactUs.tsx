@@ -1,9 +1,10 @@
 import React from 'react';
 
-import minus from '../../assets/minus.svg';
-import plus from '../../assets/plus.svg';
+import { ReactComponent as MinusButton } from '../../assets/minus.svg';
+import { ReactComponent as PlusButton } from '../../assets/plus.svg';
 import { Button } from '../../components/Button/Button';
 import { Collapse } from '../../components/Collapse/Collapse';
+import { faqText } from '../../data/faq.data';
 
 import styles from './ContactUs.module.scss';
 
@@ -19,19 +20,6 @@ export const ContactUs = () => {
 
     setOpenId(id);
   };
-
-  const faqText = [
-    {
-      id: '1',
-      title: 'What can I do to protect our planet?',
-      text: 'Not to make an open fire in nature and to clean up litter; not to pollute open water bodies; to switch to alternative energy sources; to reduce the use of non-renewable resources',
-    },
-    {
-      id: '2',
-      title: 'How to save nature ecology?',
-      text: 'Not to make an open fire in nature and to clean up litter; not to pollute open water bodies; to switch to alternative energy sources; to reduce the use of non-renewable resources',
-    },
-  ];
 
   return (
     <section className={styles.root}>
@@ -56,9 +44,9 @@ export const ContactUs = () => {
                     <span>{title}</span>
                     <div className={styles.buttonWrapper}>
                       {openId === id ? (
-                        <img alt="minus" className={styles.minus} src={minus} />
+                        <MinusButton className={styles.minus} />
                       ) : (
-                        <img alt="plus" className={styles.plus} src={plus} />
+                        <PlusButton className={styles.plus} />
                       )}
                     </div>
                   </div>

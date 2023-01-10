@@ -19,15 +19,60 @@
         position: relative;
     }
 
-    & .cardImage {
+    & .card {
         position: absolute;
-        width: 216px;
         bottom: 0;
-        right: 350px;
 
         @include media(laptop) {
-            width: 272px;
-            right: 250px;
+            bottom: -70px;
+            left: -10px;
+        }
+
+        & .cardInner {
+            position: relative;
+
+            & .cardImage {
+                width: 216px;
+                right: 350px;
+
+                @include media(laptop) {
+                    width: 272px;
+                    right: 250px;
+                }
+            }
+
+            & .cardText {
+                position: absolute;
+                bottom: 10px;
+                left: 20px;
+                color: white;
+
+                @include media(laptop) {
+                    bottom: 32px;
+                }
+
+                & .cardTitle {
+                    font-weight: 700;
+                    font-size: 15px;
+                    line-height: 0%;
+                    text-transform: capitalize;
+
+                    @include media(laptop) {
+                        font-size: 20px;
+                        line-height: 140%;
+                    }
+                }
+
+                & .cardDescription {
+                    font-weight: 700;
+                    font-size: 40px;
+                    line-height: 80px;
+
+                    @include media(laptop) {
+                        font-size: 56px;
+                    }
+                }
+            }
         }
     }
 }

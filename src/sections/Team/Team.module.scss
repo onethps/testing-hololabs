@@ -5,83 +5,80 @@
     @include container();
 
     & .wrapper {
-        margin: 192px 0;
+        margin: 100px 0;
+
+        @include media(laptop) {
+            margin: 192px 0;
+        }
 
         & .header {
             max-width: 352px;
             margin: 0 auto;
 
             & .title {
-                font-size: 40px;
+                font-size: 28px;
                 text-align: center;
                 font-weight: 700;
+
+                @include media(laptop) {
+                    font-size: 40px;
+                }
             }
 
             & .description {
                 margin-top: 16px;
                 text-align: center;
                 line-height: 32px;
+                font-size: 15px;
+
+                @include media(laptop) {
+                    font-size: 16px;
+                }
             }
         }
 
-        & .photosBlock {
-            position: relative;
+        & .userImages {
+            display: flex;
+            min-height: 367px;
+            justify-content: space-between;
+            flex-direction: column;
+            margin-top: 40px;
 
-            & .line1 {
-                position: absolute;
-                top: -180px;
-                left: 150px;
-                width: 100%;
+            @include media(laptop) {
+                flex-direction: row;
             }
 
-            & .userImages {
-                display: flex;
-                min-height: 367px;
-                justify-content: space-between;
-                flex-direction: column;
+            & .user:first-child {
+                align-self: flex-start;
+                max-height: 170px;
+                max-width: 200px;
 
                 @include media(laptop) {
-                    flex-direction: row;
+                    max-height: 273px;
+                    max-width: 323px;
                 }
+            }
 
-                & .user:first-child {
-                    align-self: flex-start;
+            & .user {
+                display: flex;
+                align-self: flex-end;
+                max-height: 208px;
+                max-width: 163px;
 
-                    max-height: 170px;
-                    max-width: 200px;
-
-                    @include media(mobile) {
-                        max-height: 273px;
-                        max-width: 323px;
-                    }
-
-                    width: 100%;
+                @include media(laptop) {
+                    max-height: 273px;
+                    max-width: 323px;
                 }
+            }
 
-                & .user {
-                    display: flex;
-                    align-self: flex-end;
-                    max-height: 208px;
-                    max-width: 163px;
+            & .user:last-child {
+                align-self: flex-start;
+                max-width: 171px;
+                max-height: 193px;
 
-                    @include media(mobile) {
-                        max-height: 273px;
-                        max-width: 323px;
-                    }
-
-                    width: 100%;
-                }
-
-                & .user:last-child {
-                    width: 100%;
-                    align-self: flex-start;
-                    max-width: 171px;
-                    max-height: 193px;
-
-                    @include media(mobile) {
-                        max-width: 276px;
-                        max-height: 312px;
-                    }
+                @include media(laptop) {
+                    max-width: 276px;
+                    max-height: 312px;
                 }
             }
         }

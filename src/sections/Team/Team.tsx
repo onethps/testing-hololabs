@@ -12,12 +12,11 @@ export const Team = () => {
             Learn more about how you can save our planets nature.
           </p>
         </div>
-        <div className={styles.photosBlock}>
-          <div className={styles.userImages}>
-            <img className={styles.user} alt="user_img" src="./user1.jpg" />
-            <img className={styles.user} alt="user_img" src="./user2.jpg" />
-            <img className={styles.user} alt="user_img" src="./user3.jpg" />
-          </div>
+
+        <div className={styles.userImages}>
+          <img className={styles.user} alt="user_img" src="./user1.jpg" />
+          <img className={styles.user} alt="user_img" src="./user2.jpg" />
+          <img className={styles.user} alt="user_img" src="./user3.jpg" />
         </div>
       </div>
     </section>

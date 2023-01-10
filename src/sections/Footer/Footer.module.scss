@@ -1,0 +1,78 @@
+@import "../../styles/media.scss";
+
+.root {
+    @include container();
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 89px 30px;
+
+    & .header {
+        &:first-child {
+            width: 100%;
+
+            & h1 {
+                margin-bottom: inherit;
+            }
+
+            & .content {
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            @include media(laptop) {
+                width: inherit;
+
+                & .content {
+                    flex-direction: column;
+                }
+            }
+        }
+
+        & h1 {
+            height: 50px;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 48px;
+            margin-bottom: 32px;
+
+            @include media(laptop) {
+                font-size: 34px;
+            }
+        }
+
+        & h2 {
+            display: flex;
+            align-items: flex-end;
+            height: 50px;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 32px;
+            letter-spacing: 0.3px;
+            margin-bottom: 37px;
+        }
+
+        & .content {
+            display: flex;
+            align-items: flex-start;
+            min-height: 20px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 24px;
+            letter-spacing: 0.3px;
+            flex-direction: column;
+
+            @include media(laptop) {
+                font-size: 13px;
+                min-height: 40px;
+            }
+
+            & .socialMedia {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+    }
+}

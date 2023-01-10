@@ -1,9 +1,9 @@
 @mixin container() {
     padding: 20px;
+    margin: 0 auto;
 
-    @include media(mobile) {
+    @include media(laptop) {
         max-width: 1119px;
-        margin: 0 auto;
     }
 }
 

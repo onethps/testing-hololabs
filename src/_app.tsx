@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ContactUs } from './sections/ContactUs/ContactUs';
+import { Footer } from './sections/Footer/Footer';
 import { Header } from './sections/Header/Header';
 import { Hero } from './sections/Hero/Hero';
 import { LogIn } from './sections/LogIn/LogIn';
@@ -16,6 +17,7 @@ const App = () => {
       <LogIn />
       <ContactUs />
       <Recommendations />
+      <Footer />
     </main>
   );
 };
