@@ -1,42 +1,42 @@
-@import "../../styles/media.scss";
+@import '../../styles/media.scss';
 
 .root {
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+
+  & .swiper {
+    height: 100%;
+    max-width: 400px;
+
+    @include media(laptop) {
+      max-width: 100%;
+    }
+  }
+
+  // control slider
+  & .sliderControl {
     display: flex;
-    flex-direction: column;
-    gap: 50px;
+    gap: 40px;
+    justify-content: center;
 
-    & .swiper {
-        max-width: 400px;
-        height: 100%;
-
-        @include media(laptop) {
-            max-width: 100%;
-        }
+    & .rightArrow {
+      border-bottom: 2px solid;
+      border-right: 2px solid;
+      cursor: pointer;
+      height: 15px;
+      transform: rotate(-45deg);
+      width: 15px;
     }
 
-    // control slider
-    & .sliderControl {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-
-        & .rightArrow {
-            cursor: pointer;
-            border-right: 2px solid;
-            border-bottom: 2px solid;
-            height: 15px;
-            width: 15px;
-            transform: rotate(-45deg);
-        }
-
-        & .leftArrow {
-            cursor: pointer;
-            border-right: 2px solid;
-            border-bottom: 2px solid;
-            height: 15px;
-            width: 15px;
-            transform: rotate(-220deg);
-        }
+    & .leftArrow {
+      border-bottom: 2px solid;
+      border-right: 2px solid;
+      cursor: pointer;
+      height: 15px;
+      transform: rotate(-220deg);
+      width: 15px;
     }
+  }
 }

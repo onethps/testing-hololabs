@@ -1,78 +1,78 @@
-@import "../../styles/variables.scss";
-@import "../../styles/media.scss";
+@import '../../styles/variables.scss';
+@import '../../styles/media.scss';
 
 .root {
+  left: -40px;
+  position: absolute;
+
+  @include media(laptop) {
+    left: 80px;
+  }
+
+  @include media(laptop) {
+    position: relative;
+    width: 100%;
+  }
+
+  & .parrotImage {
+    // width: 565px;
+    // position: absolute;
+  }
+
+  & .card {
+    bottom: 0;
     position: absolute;
-    left: -40px;
 
     @include media(laptop) {
-        left: 80px;
+      bottom: -70px;
+      left: -10px;
     }
 
-    & .parrotImage {
-        // width: 565px;
-        // position: absolute;
-    }
+    & .cardInner {
+      position: relative;
 
-    @include media(laptop) {
-        width: 100%;
-        position: relative;
-    }
-
-    & .card {
-        position: absolute;
-        bottom: 0;
+      & .cardImage {
+        right: 350px;
+        width: 216px;
 
         @include media(laptop) {
-            bottom: -70px;
-            left: -10px;
+          right: 250px;
+          width: 272px;
+        }
+      }
+
+      & .cardText {
+        bottom: 10px;
+        color: white;
+        left: 20px;
+        position: absolute;
+
+        @include media(laptop) {
+          bottom: 32px;
         }
 
-        & .cardInner {
-            position: relative;
+        & .cardTitle {
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 0%;
+          text-transform: capitalize;
 
-            & .cardImage {
-                width: 216px;
-                right: 350px;
-
-                @include media(laptop) {
-                    width: 272px;
-                    right: 250px;
-                }
-            }
-
-            & .cardText {
-                position: absolute;
-                bottom: 10px;
-                left: 20px;
-                color: white;
-
-                @include media(laptop) {
-                    bottom: 32px;
-                }
-
-                & .cardTitle {
-                    font-weight: 700;
-                    font-size: 15px;
-                    line-height: 0%;
-                    text-transform: capitalize;
-
-                    @include media(laptop) {
-                        font-size: 20px;
-                        line-height: 140%;
-                    }
-                }
-
-                & .cardDescription {
-                    font-weight: 700;
-                    font-size: 40px;
-                    line-height: 80px;
-
-                    @include media(laptop) {
-                        font-size: 56px;
-                    }
-                }
-            }
+          @include media(laptop) {
+            font-size: 20px;
+            line-height: 140%;
+          }
         }
+
+        & .cardDescription {
+          font-size: 40px;
+          font-weight: 700;
+          line-height: 80px;
+
+          @include media(laptop) {
+            font-size: 56px;
+          }
+        }
+      }
     }
+  }
 }

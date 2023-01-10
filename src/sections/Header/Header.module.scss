@@ -1,86 +1,85 @@
-@import "../../styles/variables.scss";
-@import "../../styles/media.scss";
+@import '../../styles/variables.scss';
+@import '../../styles/media.scss';
 
 .header {
-    background-color: $bgSectionPrimary;
+  background-color: $bgSectionPrimary;
 
-    & .wrapper {
-        height: 80px;
-        border-bottom: 5px solid black;
-        justify-content: space-between;
-        display: flex;
-        align-items: center;
-        margin-left: 18px;
-        margin-right: 18px;
+  & .wrapper {
+    align-items: center;
+    border-bottom: 5px solid black;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    margin-left: 18px;
+    margin-right: 18px;
+
+    @include media(laptop) {
+      margin-left: 80px;
+      margin-right: 80px;
+    }
+
+    & .linkBox {
+      align-items: center;
+      background-color: $bgSectionPrimary;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      height: 100vh;
+      left: -100%;
+      max-height: 100%;
+      padding: 20px;
+      padding-top: 10%;
+      position: fixed;
+      right: 0;
+      top: 100px;
+      transition: left 1s;
+      width: 100vw;
+      z-index: 99;
+
+      @include media(laptop) {
+        flex-direction: row;
+        gap: 102px;
+        height: auto;
+        position: inherit;
+        width: inherit;
+      }
+
+      & button {
+        width: 100%;
 
         @include media(laptop) {
-            margin-left: 80px;
-            margin-right: 80px;
+          display: none;
         }
-
-        & .linkBox {
-            display: flex;
-            position: fixed;
-            max-height: 100%;
-
-            top: 100px;
-            left: -100%;
-            right: 0;
-            bottom: 0;
-            height: 100vh;
-            z-index: 99;
-            width: 100vw;
-            background-color: $bgSectionPrimary;
-            padding-top: 10%;
-            align-items: center;
-            flex-direction: column;
-            gap: 50px;
-            transition: left 1s;
-            padding: 20px;
-
-            & button {
-                width: 100%;
-
-                @include media(laptop) {
-                    display: none;
-                }
-            }
-
-            @include media(laptop) {
-                flex-direction: row;
-                gap: 102px;
-                position: inherit;
-                width: inherit;
-                height: auto;
-            }
-        }
-
-        & .active {
-            left: 0;
-        }
-
-        & .logo {
-            z-index: 2;
-        }
-
-        & .burgerIcon {
-            border: none;
-            background: none;
-            display: block;
-            z-index: 2;
-
-            @include media(laptop) {
-                display: none;
-                z-index: 0;
-            }
-        }
-
-        & .navButton {
-            display: none;
-
-            @include media(laptop) {
-                display: block;
-            }
-        }
+      }
     }
+
+    & .active {
+      left: 0;
+    }
+
+    & .logo {
+      z-index: 2;
+    }
+
+    & .burgerIcon {
+      background: none;
+      border: none;
+      display: block;
+      z-index: 2;
+
+      @include media(laptop) {
+        display: none;
+        z-index: 0;
+      }
+    }
+
+    & .navButton {
+      display: none;
+
+      @include media(laptop) {
+        display: block;
+      }
+    }
+  }
 }

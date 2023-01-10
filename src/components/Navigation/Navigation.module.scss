@@ -1,14 +1,14 @@
-@import "../../styles/variables.scss";
-@import "../../styles/media.scss";
+@import '../../styles/variables.scss';
+@import '../../styles/media.scss';
 
 .root {
+  display: flex;
+  gap: 102px;
+
+  @include media(laptop) {
     display: flex;
-    gap: 102px;
+  }
 
-    @include media(laptop) {
-        display: flex;
-    }
-
-    & a {
-    }
+  & a {
+  }
 }

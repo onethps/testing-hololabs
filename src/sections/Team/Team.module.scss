@@ -1,86 +1,86 @@
-@import "../../styles/variables.scss";
-@import "../../styles/media.scss";
+@import '../../styles/variables.scss';
+@import '../../styles/media.scss';
 
 .root {
-    @include container();
+  @include container();
 
-    & .wrapper {
-        margin: 100px 0;
+  & .wrapper {
+    margin: 100px 0;
+
+    @include media(laptop) {
+      margin: 192px 0;
+    }
+
+    & .header {
+      margin: 0 auto;
+      max-width: 352px;
+
+      & .title {
+        font-size: 28px;
+        font-weight: 700;
+        text-align: center;
 
         @include media(laptop) {
-            margin: 192px 0;
+          font-size: 40px;
         }
+      }
 
-        & .header {
-            max-width: 352px;
-            margin: 0 auto;
+      & .description {
+        font-size: 15px;
+        line-height: 32px;
+        margin-top: 16px;
+        text-align: center;
 
-            & .title {
-                font-size: 28px;
-                text-align: center;
-                font-weight: 700;
-
-                @include media(laptop) {
-                    font-size: 40px;
-                }
-            }
-
-            & .description {
-                margin-top: 16px;
-                text-align: center;
-                line-height: 32px;
-                font-size: 15px;
-
-                @include media(laptop) {
-                    font-size: 16px;
-                }
-            }
+        @include media(laptop) {
+          font-size: 16px;
         }
-
-        & .userImages {
-            display: flex;
-            min-height: 367px;
-            justify-content: space-between;
-            flex-direction: column;
-            margin-top: 40px;
-
-            @include media(laptop) {
-                flex-direction: row;
-            }
-
-            & .user:first-child {
-                align-self: flex-start;
-                max-height: 170px;
-                max-width: 200px;
-
-                @include media(laptop) {
-                    max-height: 273px;
-                    max-width: 323px;
-                }
-            }
-
-            & .user {
-                display: flex;
-                align-self: flex-end;
-                max-height: 208px;
-                max-width: 163px;
-
-                @include media(laptop) {
-                    max-height: 273px;
-                    max-width: 323px;
-                }
-            }
-
-            & .user:last-child {
-                align-self: flex-start;
-                max-width: 171px;
-                max-height: 193px;
-
-                @include media(laptop) {
-                    max-width: 276px;
-                    max-height: 312px;
-                }
-            }
-        }
+      }
     }
+
+    & .userImages {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 40px;
+      min-height: 367px;
+
+      @include media(laptop) {
+        flex-direction: row;
+      }
+
+      & .user:first-child {
+        align-self: flex-start;
+        max-height: 170px;
+        max-width: 200px;
+
+        @include media(laptop) {
+          max-height: 273px;
+          max-width: 323px;
+        }
+      }
+
+      & .user {
+        align-self: flex-end;
+        display: flex;
+        max-height: 208px;
+        max-width: 163px;
+
+        @include media(laptop) {
+          max-height: 273px;
+          max-width: 323px;
+        }
+      }
+
+      & .user:last-child {
+        align-self: flex-start;
+        max-height: 193px;
+        max-width: 171px;
+
+        @include media(laptop) {
+          max-height: 312px;
+          max-width: 276px;
+        }
+      }
+    }
+  }
 }

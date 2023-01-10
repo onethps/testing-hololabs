@@ -1,47 +1,47 @@
-@import "../../styles/variables.scss";
-@import "../../styles/media.scss";
+@import '../../styles/variables.scss';
+@import '../../styles/media.scss';
 
 .root {
-    background-color: $bgSectionPrimary;
-    height: 100%;
+  background-color: $bgSectionPrimary;
+  height: 100%;
 
-    & .container {
-        @include container();
+  & .container {
+    @include container();
 
-        & .wrapper {
-            display: flex;
-            flex-direction: column;
-            padding-top: 32px;
-            align-items: center;
+    & .wrapper {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      padding-top: 32px;
 
-            @include media(laptop) {
-                flex-direction: row;
-                gap: 100px;
-                padding-bottom: 96px;
-            }
+      @include media(laptop) {
+        flex-direction: row;
+        gap: 100px;
+        padding-bottom: 96px;
+      }
 
-            & .leftItem {
-                display: flex;
-                flex-direction: column;
-                flex: 1;
-                gap: 60px;
+      & .leftItem {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 60px;
 
-                & .heroTitle {
-                    height: auto;
-                    width: 100%;
-                }
-
-                & .heroDescription {
-                    max-width: 448px;
-                    line-height: 32px;
-                }
-            }
-
-            & .rightItem {
-                flex: 1;
-                position: relative;
-                min-height: 565px;
-            }
+        & .heroTitle {
+          height: auto;
+          width: 100%;
         }
+
+        & .heroDescription {
+          line-height: 32px;
+          max-width: 448px;
+        }
+      }
+
+      & .rightItem {
+        flex: 1;
+        min-height: 565px;
+        position: relative;
+      }
     }
+  }
 }

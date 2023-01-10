@@ -27,7 +27,7 @@ export const Recommendations = () => {
                         }}
                         alt="label-img"
                         className={`${styles.labelImg} ${
-                          isActive ? styles.animateImageActiveLabel : styles.defaultImage
+                          isActive ? styles.animateImageActiveLabel : ''
                         }`}
                         src={slide.img}
                       />

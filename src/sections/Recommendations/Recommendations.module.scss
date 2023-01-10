@@ -1,127 +1,175 @@
-@import "../../styles/variables.scss";
-@import "../../styles/media.scss";
+@import '../../styles/variables.scss';
+@import '../../styles/media.scss';
 
 .root {
-    margin: 100px 0;
-    background: #f4b091;
-    height: 655px;
-    display: flex;
+  align-items: center;
+  background: #F4B091;
+  display: flex;
+  height: 655px;
+  margin: 100px 0;
+  width: 100%;
+
+  & .slide {
     align-items: center;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-width: 438px;
+    min-height: 400px;
+    transform: scale(.8);
 
-    & .slide {
-        min-height: 400px;
-        display: flex;
-        align-items: center;
-        max-width: 438px;
-        transform: scale(0.8);
-        justify-content: center;
-
-        & .zoom {
-            transform: scale(1.2);
-            transition: 0.5s ease-in;
-        }
-
-        & .activeSlide {
-            position: relative;
-            max-width: 438px;
-            height: auto;
-
-            & .labelImg {
-                position: absolute;
-                top: 0;
-                height: 243px;
-                width: 277px;
-                filter: brightness(85%);
-                -webkit-filter: brightness(85%);
-            }
-
-            & .imageBox {
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 243px;
-                width: 277px;
-
-                & .labelTitle {
-                    font-weight: 600;
-                    font-size: 24px;
-                    color: white;
-                    opacity: 0.9;
-                }
-            }
-
-            & .contentCard {
-                background-color: #f7f3f4;
-                box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 0.3);
-                border-radius: 13% 87% 37% 63% / 57% 38% 62% 43% !important;
-                width: 300px;
-                height: 290px;
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                padding: 40px;
-
-                @include media(laptop) {
-                    width: 438px;
-                    height: 353px;
-                }
-
-                & .title {
-                    font-size: 24px;
-                    opacity: 0.9;
-                    font-weight: 600;
-
-                    &-.active {
-                        position: absolute;
-                        z-index: 5;
-                    }
-                }
-            }
-
-            & .defaultImage {
-            }
-
-            & .animateImageActiveLabel {
-                position: absolute;
-                top: -20px;
-                -webkit-animation: slide-bck-tl 0.45s cubic-bezier(0.47, 0, 0.745, 0.715) both;
-                animation: slide-bck-tl 0.45s cubic-bezier(0.47, 0, 0.745, 0.715) both;
-
-                @include media(laptop) {
-                    top: 0;
-                }
-            }
-        }
+    & .zoom {
+      transform: scale(1.2);
+      transition: .5s ease-in-out;
     }
+
+    & .activeSlide {
+      height: auto;
+      max-width: 438px;
+      position: relative;
+
+      & .labelImg {
+        filter: brightness(85%);
+        filter: brightness(85%);
+        height: 243px;
+        position: absolute;
+        top: 0;
+        width: 277px;
+      }
+
+      & .imageBox {
+        align-items: center;
+        display: flex;
+        height: 243px;
+        justify-content: center;
+        position: relative;
+        width: 277px;
+
+        & .labelTitle {
+          color: white;
+          font-size: 24px;
+          font-weight: 600;
+          opacity: .9;
+        }
+      }
+
+      & .contentCard {
+        align-items: center;
+        background-color: #F7F3F4;
+
+        //card default blob style
+        border-radius: 13% 87% 37% 63% / 57% 38% 62% 43% !important;
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, .3);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        height: 290px;
+        justify-content: center;
+        padding: 40px;
+        text-align: center;
+        width: 350px;
+
+        @include media(laptop) {
+          height: 353px;
+          width: 438px;
+        }
+
+        & .title {
+          animation: text-focus-in 1s cubic-bezier(.55, .085, .68, .53) both;
+          animation: text-focus-in 1s cubic-bezier(.55, .085, .68, .53) both;
+          font-size: 24px;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 26px;
+
+          @include media(laptop) {
+            font-size: 24px;
+          }
+
+          &-.active {
+            position: absolute;
+            z-index: 5;
+          }
+        }
+
+        & .description {
+          animation: text-focus-in 1s cubic-bezier(.55, .085, .68, .53) both;
+          animation: text-focus-in 1s cubic-bezier(.55, .085, .68, .53) both;
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 175%;
+          mix-blend-mode: normal;
+          opacity: .9;
+          text-align: center;
+
+          @include media(laptop) {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+
+      & .animateImageActiveLabel {
+        animation: slide-bck-tl .45s cubic-bezier(.47, 0, .745, .715) both;
+        animation: slide-bck-tl .45s cubic-bezier(.47, 0, .745, .715) both;
+        position: absolute;
+        top: -20px;
+
+        @include media(laptop) {
+          top: 0;
+        }
+      }
+    }
+  }
 }
 
-@-webkit-keyframes slide-bck-tl {
-    0% {
-        -webkit-transform: translateZ(0) translateY(0) translateX(0);
-        transform: translateZ(0) translateY(0) translateX(0);
-    }
-    100% {
-        -webkit-transform: translateZ(-400px) translateY(-200px) translateX(-200px);
-        transform: translateZ(-400px) translateY(-200px) translateX(-200px);
-    }
+//  move picture to top as label
+@keyframes slide-bck-tl {
+  0% {
+    transform: translateZ(0) translateY(0) translateX(0);
+    transform: translateZ(0) translateY(0) translateX(0);
+  }
+
+  100% {
+    transform: translateZ(-400px) translateY(-200px) translateX(-200px);
+    transform: translateZ(-400px) translateY(-200px) translateX(-200px);
+  }
 }
 @keyframes slide-bck-tl {
-    0% {
-        transform: scale(1);
-        transform-origin: 100% 0%;
-    }
-    100% {
-        transform: scale(0.5);
-        transform-origin: 0% -20%;
-    }
+  0% {
+    transform: scale(1);
+    transform-origin: 100% 0%;
+  }
+
+  100% {
+    transform: scale(.5);
+    transform-origin: 0% -20%;
+  }
 }
 
-.slide-bck-tl {
-    -webkit-animation: slide-bck-tl 0.45s cubic-bezier(0.47, 0, 0.745, 0.715) both;
-    animation: slide-bck-tl 0.45s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+/// text focus animation
+@keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
 }

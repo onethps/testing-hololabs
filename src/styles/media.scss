@@ -1,33 +1,33 @@
 @mixin container() {
-    padding: 20px;
-    margin: 0 auto;
+  margin: 0 auto;
+  padding: 20px;
 
-    @include media(laptop) {
-        max-width: 1119px;
-    }
+  @include media(laptop) {
+    max-width: 1119px;
+  }
 }
 
 $breakpoints: (
-    "mobile": 375px,
-    "small-tablet": 600px,
-    "tablet": 768px,
-    "laptop": 992px,
+  'mobile': 375px,
+  'small-tablet': 600px,
+  'tablet': 768px,
+  'laptop': 992px,
 );
 
 @mixin media($breakpoint) {
-    // If the breakpoint exists in the map.
-    @if map-has-key($breakpoints, $breakpoint) {
-        // Get the breakpoint value.
-        $breakpoint-value: map-get($breakpoints, $breakpoint);
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
 
-        // Write the media query.
-        @media (min-width: $breakpoint-value) {
-            @content;
-        }
-
-        // If the breakpoint doesn't exist in the map.
-    } @else {
-        // Log a warning.
-        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
     }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
 }

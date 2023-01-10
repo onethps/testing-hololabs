@@ -1,127 +1,151 @@
-@import "../../styles/variables.scss";
-@import "../../styles/media.scss";
+@import '../../styles/variables.scss';
+@import '../../styles/media.scss';
 
 .root {
-    @include container();
+  @include container();
 
-    & .wrapper {
-        margin: 100px 0;
-        padding: 0 18px;
-        display: flex;
-        flex-direction: column;
+  & .wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    padding: 0 18px;
+
+    @include media(laptop) {
+      flex-direction: row;
+      gap: 104px;
+      margin: 192px 0;
+    }
+
+    & .leftItem {
+      & .title {
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 150%;
+        text-transform: capitalize;
 
         @include media(laptop) {
-            flex-direction: row;
-            gap: 104px;
-            margin: 192px 0;
+          font-size: 38px;
+          line-height: 56px;
         }
+      }
 
-        & .leftItem {
-            & .title {
-                font-size: 26px;
-                font-weight: 700;
+      & .description {
+        font-size: 15px;
+        line-height: 175%;
+        margin-top: 20px;
 
-                @include media(laptop) {
-                    font-size: 38px;
-                }
-            }
-
-            & .description {
-                margin-top: 20px;
-                font-size: 15px;
-                line-height: 175%;
-            }
-
-            & .contactButton {
-                align-self: flex-start;
-                margin-top: 32px;
-                text-transform: uppercase;
-            }
+        @include media(laptop) {
+          font-size: 18px;
+          line-height: 32px;
         }
+      }
 
-        & .faqBox {
-            & .faqItem {
-                border-bottom: 1px solid rgba(30, 26, 32, 0.2);
-                -webkit-background-clip: padding-box; /* for Safari */
-                background-clip: padding-box;
-                padding: 24px 0;
+      & .contactButton {
+        align-self: flex-start;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        line-height: 140%;
+        margin-top: 32px;
+        text-transform: uppercase;
 
-                &:first-child {
-                    @include media(laptop) {
-                        padding-top: 0;
-                    }
-                }
-
-                &:last-child {
-                    border-bottom: 1px solid rgba(30, 26, 32, 0.2);
-                    -webkit-background-clip: padding-box; /* for Safari */
-                    background-clip: padding-box;
-                }
-
-                //header collapse
-                & button {
-                    width: 100%;
-                    border: none;
-                    background: none;
-                    text-align: left;
-
-                    //text collapse header
-                    & span {
-                        font-weight: 600;
-                        font-size: 18px;
-                        line-height: 24px;
-                        font-family: "Poppins";
-                        font-style: normal;
-                    }
-
-                    & .headerButton {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-
-                        & span {
-                            max-width: 80%;
-                            @include media(laptop) {
-                                max-width: inherit;
-                            }
-                        }
-
-                        & .buttonWrapper {
-                            min-width: 40px;
-                            background: $bgButtonPrimary;
-                            width: 40px;
-                            height: 40px;
-                            border-radius: 50%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-
-                            & .plus {
-                                transition: 0.5s all;
-                                transition-property: transform;
-                                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-                                transition-duration: 150ms;
-                            }
-
-                            & .minus {
-                                transform: rotate(180deg);
-                                transition: 0.5s all;
-                                transition-property: transform;
-                                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-                                transition-duration: 150ms;
-                            }
-                        }
-                    }
-                }
-
-                // collapse content
-                & .collapseText {
-                    font-weight: 400;
-                    font-size: 15px;
-                    line-height: 25px;
-                    padding: 16px 0;
-                }
-            }
+        @include media(laptop) {
+          font-size: 18px;
+          line-height: 32px;
         }
+      }
     }
+
+    & .faqBox {
+      & .faqItem {
+        background-clip: padding-box; /* for Safari */
+        background-clip: padding-box;
+        border-bottom: 1px solid rgba(30, 26, 32, .2);
+        margin-top: 48px;
+        padding: 24px 0;
+
+        &:first-child {
+          @include media(laptop) {
+            padding-top: 0;
+          }
+        }
+
+        &:last-child {
+          background-clip: padding-box; /* for Safari */
+          background-clip: padding-box;
+          border-bottom: 1px solid rgba(30, 26, 32, .2);
+        }
+
+        //title faq Item
+        & button {
+          background: none;
+          border: none;
+          text-align: left;
+          width: 100%;
+
+          //text collapse header
+          & span {
+            color: #1E1A20;
+            font-family: 'Poppins';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 24px;
+            opacity: .9;
+
+            @include media(laptop) {
+              font-size: 24px;
+            }
+          }
+
+          & .headerButton {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+
+            & span {
+              max-width: 80%;
+              @include media(laptop) {
+                max-width: inherit;
+              }
+            }
+
+            & .buttonWrapper {
+              align-items: center;
+              background: $bgButtonPrimary;
+              border-radius: 50%;
+              display: flex;
+              height: 40px;
+              justify-content: center;
+              min-width: 40px;
+              width: 40px;
+
+              & .plus {
+                transition: .5s all;
+                transition-duration: 150ms;
+                transition-property: transform;
+                transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+              }
+
+              & .minus {
+                transform: rotate(180deg);
+                transition: .5s all;
+                transition-duration: 150ms;
+                transition-property: transform;
+                transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+              }
+            }
+          }
+        }
+
+        // collapse content
+        & .collapseText {
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 25px;
+          padding: 16px 0;
+        }
+      }
+    }
+  }
 }
