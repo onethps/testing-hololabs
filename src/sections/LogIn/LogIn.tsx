@@ -7,7 +7,7 @@ import styles from './LogIn.module.scss';
 
 export const LogIn = () => {
   return (
-    <section className={styles.root}>
+    <section id="login" className={styles.root}>
       <div className={styles.wrapper}>
         {/* left item */}
         <div className={styles.leftItem}>

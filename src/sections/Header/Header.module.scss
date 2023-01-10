@@ -3,6 +3,9 @@
 
 .header {
   background-color: $bgSectionPrimary;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
 
   & .wrapper {
     align-items: center;
@@ -10,8 +13,6 @@
     display: flex;
     height: 80px;
     justify-content: space-between;
-    margin-left: 18px;
-    margin-right: 18px;
 
     @include media(laptop) {
       margin-left: 80px;
@@ -32,12 +33,13 @@
       padding-top: 10%;
       position: fixed;
       right: 0;
-      top: 100px;
+      top: 80px;
       transition: left 1s;
       width: 100vw;
       z-index: 99;
 
       @include media(laptop) {
+        padding: 0;
         flex-direction: row;
         gap: 102px;
         height: auto;
@@ -51,6 +53,15 @@
         @include media(laptop) {
           display: none;
         }
+      }
+
+      & .defaultLink {
+        cursor: pointer;
+      }
+
+      & .activeLink {
+        font-weight: 700;
+        cursor: pointer;
       }
     }
 

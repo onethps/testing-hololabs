@@ -22,7 +22,7 @@ export const ContactUs = () => {
   };
 
   return (
-    <section className={styles.root}>
+    <section id="contact" className={styles.root}>
       <div className={styles.wrapper}>
         <div className={styles.leftItem}>
           <h3 className={styles.title}>Ready to Get started?</h3>

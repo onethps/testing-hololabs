@@ -4,7 +4,7 @@ import styles from './Footer.module.scss';
 
 export const Footer = () => {
   return (
-    <div className={styles.root}>
+    <section id="footer" className={styles.root}>
       <div className={styles.header}>
         <h1>CONTACTS</h1>
         <div className={styles.content}>
@@ -36,6 +36,6 @@ export const Footer = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

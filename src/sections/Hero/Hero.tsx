@@ -6,7 +6,7 @@ import styles from './Hero.module.scss';
 
 export const Hero = () => {
   return (
-    <section className={styles.root}>
+    <section id="home" className={styles.root}>
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.leftItem}>
@@ -20,12 +20,6 @@ export const Hero = () => {
           <div className={styles.rightItem}>
             <HeroMemberStats />
           </div>
-          {/* <div className={styles.memberImageStats}>
-            <div className={styles.parrotStatsWrapper}>
-              <img alt="parrot" src="./Parrot.svg" width="100%" />
-              <MemberCard className={styles.memberCard} />
-            </div>
-          </div> */}
         </div>
       </div>
     </section>

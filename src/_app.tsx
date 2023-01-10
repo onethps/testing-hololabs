@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ContactUs } from './sections/ContactUs/ContactUs';
 import { Footer } from './sections/Footer/Footer';
 import { Header } from './sections/Header/Header';

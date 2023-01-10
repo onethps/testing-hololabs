@@ -4,14 +4,15 @@
 .buttonBase {
   border: none;
   border-radius: 40px;
-  box-shadow: 0 30px 40px rgba(240, 101, 126, .05);
+  box-shadow: 0 30px 40px rgba(240, 101, 126, 0.05);
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
   padding: 15px;
+  cursor: pointer;
 
-  @include media(mobile) {
+  @include media(laptop) {
     font-size: inherit;
     padding: 13px 48px;
   }
@@ -20,8 +21,19 @@
 .primary {
   background-color: $bgButtonPrimary;
   color: white;
+  transition: 0.3s all;
+
+  &:hover {
+    background-color: $bgButtonPrimaryDarker;
+  }
 }
 
 .secondary {
   background-color: white;
+  transition: 0.3s all;
+
+  &:hover {
+    background-color: $bgButtonPrimary;
+    color: white;
+  }
 }

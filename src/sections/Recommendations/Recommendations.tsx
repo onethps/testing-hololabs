@@ -10,7 +10,7 @@ import styles from './Recommendations.module.scss';
 
 export const Recommendations = () => {
   return (
-    <div className={styles.root}>
+    <section id="recommendations" className={styles.root}>
       <Slider>
         {sliderContent.map(slide => {
           const getRandomCardStyle = Math.floor(Math.random() * slideStyles.length);
@@ -61,6 +61,6 @@ export const Recommendations = () => {
           );
         })}
       </Slider>
-    </div>
+    </section>
   );
 };
